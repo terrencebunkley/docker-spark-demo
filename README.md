@@ -24,7 +24,7 @@ Navigate inside cloned directory
 
 Using Mac: `cd docker-spark-demo`
  
-Run the container
+Run the container (Command explained near bottom of this README)
  
 `docker run --name spark-master --rm -it  -p 4040:4040/tcp -p 8080:8080/tcp -p 8081:8081/tcp --mount type=bind,source="$(pwd)",target=/docker-spark-demo birgerk/apache-spark 
 `
@@ -56,3 +56,13 @@ Example :
 
 ## Editing the files outside the container (on the host)
 #### You can edit the files inside ./src/main/ using any text editor and they will be updated inside the container automatically
+
+#### Docker arguments Explained
+`--name` -- Creates the container with the specified name which can be used to reference it
+
+`-it` -- Instructs Docker to allocate a pseudo-TTY connected to the container’s stdin; creating an interactive bash shell in the container
+
+`-p` -- Binds specified of the container to corresponding port of the host machine. 
+
+`--mount` --  Attach a filesystem mount to the container, in this case we are mounting the host's filesystem
+ 
