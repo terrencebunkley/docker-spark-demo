@@ -42,3 +42,6 @@ Format
 
 ##### Example : 
 `./spark-submit /docker-spark-demo/src/main/pi_count.py `
+
+## Editing the files outside the container (on the host)
+#### You can edit the files inside ./src/main/ using any text editor and the will be updated inside the container automatically
