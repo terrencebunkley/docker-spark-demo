@@ -38,6 +38,9 @@ Log into the container
 
 `docker exec -it spark-master /bin/bash`
 
+## Overwrite the loggiing settings for this demo
+`cp /docker-spark-demo/container_conf/log4j.properties /usr/local/spark/conf/`
+
 ### Navigate to Spark execuable directory
 
 `cd /usr/local/spark/bin`
