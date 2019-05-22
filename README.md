@@ -14,6 +14,10 @@ Text editor, like Atom https://atom.io/
 #### Clone this repo (via Terminal / Command Prompt )
 `git clone https://github.com/terrencebunkley/docker-spark-demo.git`
 
+#### Downlaod the data from Google storage and extract into a folder named "data" in the project folder 'docker-spark-demo'
+https://storage.googleapis.com/twsg-data-eng-bootcamp-data/data.zip
+
+There should be different folders (ie. "credit_card", "crimes") under "docker-spark-demo/data/ 
 
 ### Starting the container
 Navigate inside cloned directory 
