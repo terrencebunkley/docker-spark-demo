@@ -1,22 +1,44 @@
 # Docker Spark Demo
 
-#### Clone this repo
+### Requirements
+Prework: 
+Download and install Docker
 
-Via Terminal / Command Prompt
+Mac: https://docs.docker.com/docker-for-mac/release-notes/
 
-`git clone ehttps://github.com/terrencebunkley/docker-spark-demo.git`
+Windows: https://docs.docker.com/docker-for-windows/release-notes/
+
+Text editor, like Atom https://atom.io/
+
+## Getting Started
+#### Clone this repo (via Terminal / Command Prompt )
+`git clone https://github.com/terrencebunkley/docker-spark-demo.git`
+
 
 ### Starting the container
-Go to the root directory and run: 
+Navigate inside cloned directory 
 
+Using Mac: `cd docker-spark-demo`
+ 
+ Run the container
+ 
 `docker run --name spark-master --rm -it  -p 4040:4040/tcp -p 8080:8080/tcp -p 8081:8081/tcp --mount type=bind,source="$(pwd)",target=/docker-spark-demo birgerk/apache-spark 
 `
-#### Log into the container
 
-`docker exec -it spark-master /bin/bash
-`
-#### Navigate to Spark Exe
+## Running Spark inside the container
+All of the following instructions are to be run inside the container
+### Log into the container
+
+`docker exec -it spark-master /bin/bash`
+
+### Navigate to Spark execuable directory
+
 `cd /usr/local/spark/bin`
 
-#### Execute one of examples with spark-submit 
+### Execute one of examples with spark-submit executable
+Format
+
+`./spark-submit <full-path-to-filename.py>`
+
+##### Example : 
 `./spark-submit /docker-spark-demo/src/main/pi_count.py `
