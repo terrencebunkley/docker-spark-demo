@@ -57,7 +57,7 @@ Example :
 ## Editing the files outside the container (on the host)
 #### You can edit the files inside ./src/main/ using any text editor and they will be updated inside the container automatically
 
-#### Docker arguments Explained
+## Docker arguments Explained
 `--name` -- Creates the container with the specified name which can be used to reference it
 
 `-it` -- Instructs Docker to allocate a pseudo-TTY connected to the container’s stdin; creating an interactive bash shell in the container
