@@ -24,13 +24,17 @@ Navigate inside cloned directory
 
 Using Mac: `cd docker-spark-demo`
  
-Run the container (Command explained near bottom of this README)
+Run the container (Command explained near bottom of this README) 
  
 `docker run --name spark-master --rm -it  -p 4040:4040/tcp -p 8080:8080/tcp -p 8081:8081/tcp --mount type=bind,source="$(pwd)",target=/docker-spark-demo birgerk/apache-spark 
 `
 
+Once the above command is ran the console will only output the result of starting the container. 
+
+You can only exit this by pressing "Control-D" to shut down the container. (MacOS)
+
 ## Running Spark inside the container
-### All of the following instructions are to be run inside the container
+### All of the following instructions are to be run inside the terminal
 
 Open a new Terminal / Command Prompt window
 
@@ -38,10 +42,10 @@ Log into the container
 
 `docker exec -it spark-master /bin/bash`
 
-## Overwrite the loggiing settings for this demo
+## Overwrite the logging settings for this demo
 `cp /docker-spark-demo/container_conf/log4j.properties /usr/local/spark/conf/`
 
-### Navigate to Spark execuable directory
+### Navigate to Spark executable directory
 
 `cd /usr/local/spark/bin`
 
