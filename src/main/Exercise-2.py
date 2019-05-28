@@ -14,13 +14,13 @@ if __name__ == "__main__":
     # Create Spark Instance
     spark = SparkSession \
         .builder \
-        .appName("SimpleCrimeCSVParser") \
+        .appName("Exercise %i" % exerciseNum) \
         .getOrCreate()
 
     # Location of CSV File
     filePath = "/docker-spark-demo/data/crimes/Crimes_-_One_year_prior_to_present.csv"
 
-    # Load  DataFrame From the CSV
+    # Load DataFrame From the CSV
     df = spark.read.load(filePath, format="csv", sep=",", inferSchema="true", header="true").cache()
 
     # We can use the 'filter' function to refine the data.
