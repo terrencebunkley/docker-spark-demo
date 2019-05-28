@@ -3,15 +3,10 @@ import Util
 from pyspark.sql import SparkSession
 
 if __name__ == "__main__":
-
-    exerciseNum = 1
+    exerciseNum = 3
     print(Util.loggingSeparator)
-    print("Exercise 1")
+    print("Exercise %i" % exerciseNum)
 
-    '''
-    Exercise 1:
-    We are going to load a CSV document and look at the column types and the number of rows
-    '''
     # Create Spark Instance
     spark = SparkSession \
         .builder \
@@ -24,8 +19,9 @@ if __name__ == "__main__":
     # Load  DataFrame From the CSV
     df = spark.read.load(filePath, format="csv", sep=",", inferSchema="true", header="true").cache()
 
-    print("The column types are \n %s \n" % df.dtypes)
-    print("The rows count %i \n" % df.count())
+    # Show Number of arrests and non arrests
+    df.groupBy(df["ARREST"]).count().show()
+
     print(Util.loggingSeparator)
 
     spark.stop()
