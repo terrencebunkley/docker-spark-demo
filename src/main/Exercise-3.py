@@ -20,7 +20,7 @@ if __name__ == "__main__":
     df = spark.read.load(filePath, format="csv", sep=",", inferSchema="true", header="true").cache()
 
     # Show Number of arrests and non arrests
-    df.groupBy(df["ARREST"]).count().show()
+    df.groupBy("ARREST").count().show()
 
     print(Util.loggingSeparator)
 

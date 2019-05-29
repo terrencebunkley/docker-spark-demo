@@ -7,10 +7,6 @@ if __name__ == "__main__":
     print(Util.loggingSeparator)
     print("Exercise %i" % exerciseNum)
 
-    '''
-    Exercise 2:
-    We are going to load a CSV document and filter the data for the crimes listed as other offenses.
-    '''
     # Create Spark Instance
     spark = SparkSession \
         .builder \

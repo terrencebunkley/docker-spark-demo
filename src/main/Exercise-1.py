@@ -6,12 +6,8 @@ if __name__ == "__main__":
 
     exerciseNum = 1
     print(Util.loggingSeparator)
-    print("Exercise 1")
+    print("Exercise %i" % exerciseNum)
 
-    '''
-    Exercise 1:
-    We are going to load a CSV document and look at the column types and the number of rows
-    '''
     # Create Spark Instance
     spark = SparkSession \
         .builder \

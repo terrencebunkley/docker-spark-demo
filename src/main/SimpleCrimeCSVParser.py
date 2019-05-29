@@ -56,6 +56,7 @@ if __name__ == "__main__":
     print("The number of thefts we see in this report are %i" % df.filter(
         df[" PRIMARY DESCRIPTION"] == 'THEFT').count())
     '''
+
     # Add columns to Dataframe  DATE_AS_STRING
     df = df.withColumn('DATE_AS_STRING', getDate('DATE  OF OCCURRENCE'))
     print(df.take(1))
@@ -72,9 +73,7 @@ if __name__ == "__main__":
         .show()
     '''
 
-    df.filter((df['Date'] > date(2018, 03, 20)) & (df['Date'] < date(2018, 06, 21))) \
+    df.filter((df['Date'] > date(2018, 3, 20)) & (df['Date'] < date(2018, 6, 21))) \
         .groupBy(" LOCATION DESCRIPTION").count().sort("count", ascending=False).show(n=100, truncate=False)
-
-
 
     spark.stop()

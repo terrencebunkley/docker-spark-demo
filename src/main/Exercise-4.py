@@ -36,6 +36,7 @@ if __name__ == "__main__":
     # Add Date object to the Dataframe
     df = df.withColumn('Date', F.to_date('DATE_AS_STRING', 'MM/dd/yyyy'))
 
+    # Filter data for all events that happened in the Spring of 2018
     df.filter((df['Date'] > date(2018, 3, 20)) & (df['Date'] < date(2018, 6, 21))) \
         .groupBy(" LOCATION DESCRIPTION").count().sort("count", ascending=False).show(n=100, truncate=False)
 
